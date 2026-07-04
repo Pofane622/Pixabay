@@ -5,9 +5,7 @@ import Masonry from "react-masonry-css";
 import { Link } from 'react-router';
 import PulseLoader from 'react-spinners/PulseLoader';
 
-
 export function SearchPage() {
-
   const breakpointColumnsObj = {
     default: 4,
     1100: 3,
@@ -15,12 +13,11 @@ export function SearchPage() {
     500: 1
   };
 
-
   const { images, search, loading } = useContext(GlobalContext)
 
-  if (loading){
-    return(
-      <div>
+  if (loading) {
+    return (
+      <div className='loading-container'>
         <PulseLoader color="#00b4b4" size={15} margin={5} />
         <p>Loading images...</p>
       </div>
@@ -30,29 +27,28 @@ export function SearchPage() {
   return (
     <div className='search-body'>
       <h1>{search} pictures and images</h1>
-      <p>20+ {search} photos and stock images. Download your favourite royalty free {search} pictures in HD to 4K quality as wallpapers, backgrounds and more </p>
+      <p>20+ {search} photos and stock images. Download your favourite royalty free {search} pictures in HD to 4K quality as wallpapers, backgrounds and more</p>
 
-      {
-        images && images.length > 0 ? (
-          <Masonry
-            breakpointCols={breakpointColumnsObj}
-            className="masonry-grid"
-            columnClassName="masonry-column"
-          >
-            {images.map((image) => (
-              <Link key={image.id} to={`/images/${image.id}`} >
-              <img
-                key={image.id}
-                src={image.webformatURL}
-                alt={image.tags}
-              /></Link>
-              
-
-            ))}
-          </Masonry>
-
-        ) : (<div> Please search something </div>)
-      }
+      {images && images.length > 0 ? (
+        <Masonry
+          breakpointCols={breakpointColumnsObj}
+          className="masonry-grid"
+          columnClassName="masonry-column"
+        >
+          {images.map((image) => (
+            <div className="image-card" key={image.id}>
+              <Link to={`/images/${image.id}`}>
+                <img
+                  src={image.webformatURL}
+                  alt={image.tags}
+                />
+              </Link>
+            </div>
+          ))}
+        </Masonry>
+      ) : (
+        <div>Please search something</div>
+      )}
     </div>
   )
 }
