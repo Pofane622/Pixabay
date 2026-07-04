@@ -1,0 +1,108 @@
+.pixabay-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 32px;
+  border-bottom: 1px solid rgba(197, 195, 195, 0.363);
+  overflow-x: hidden; 
+}
+
+.nav-input-div {
+  flex: 1;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  background-color: rgb(218, 214, 214);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.nav-input {
+  flex: 1;
+  height: 40px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: rgb(100, 100, 100);
+  padding-left: 16px;
+  font-size: 15px;
+}
+
+.nav-search-btn {
+  height: 40px;
+  padding: 0 16px;
+  background-color: transparent;
+  border: none;
+  color: rgb(100, 100, 100);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid rgb(105, 105, 105);
+  padding-left: 20px;
+  padding-right: 30px;
+}
+
+.nav-search-btn:hover {
+  color: #00b4b4;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 28px; 
+}
+
+.logo {
+  font-size: 34px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+
+.explore-btn:hover {
+  background-color: rgba(255, 253, 253, 0.06);
+}
+
+.upload-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+.upload-btn:hover {
+  background-color: rgba(255, 247, 247, 0.06);
+}
+
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.notification-icon {
+  color: rgba(255, 255, 255, 0.993);
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.notification-icon:hover {
+  color: rgba(255, 249, 249, 0.575);
+}
+
+.profile-icon {
+  color: #fdf8f8;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.profile-icon:hover {
+  color: rgba(255, 255, 255, 0.603);
+}
